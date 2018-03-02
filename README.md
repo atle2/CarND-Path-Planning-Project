@@ -49,6 +49,12 @@ The car never leaves its lane except to change lanes in a quick and smooth motio
 
 The car changes lanes when there is a slower vehicle in front of it detected and there are no cars to its sides.
 
+## Reflection
+
+The first thing the code does to begin the path-planning is to determine where the other cars are. Lines 261-277 in /src/main.cpp determine which lanes the other vehicles are in. Afterwards, whether or not they are within 30 meters of our vehicle is determined. If a vehicle is going slowly in front of our car, it will check whether or not a car is in the adjacent lanes. It will then either change lanes to an open lane or slow down.
+
+In lines 374-384 of main.cpp it creates waypoints 30 meters in front of the vehicle based on the current lane. In order to smoothly drive the car, a spline is created using the points generated from getXY. To make the spline calculations easier, the coordinates are shifted and transformed beforehand to local car coordinates. 
+
 ## Dependencies
 
 * cmake >= 3.5
