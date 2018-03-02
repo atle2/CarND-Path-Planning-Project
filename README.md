@@ -1,8 +1,5 @@
 # CarND-Path-Planning-Project
 Self-Driving Car Engineer Nanodegree Program
-   
-   
-![Driving](images/driving.png)
 
 ### Goals
 In this project your goal is to safely navigate around a virtual highway with other traffic that is driving +-10 MPH of the 50 MPH speed limit. You will be provided the car's localization and sensor fusion data, there is also a sparse map list of waypoints around the highway. The car should try to go as close as possible to the 50 MPH speed limit, which means passing slower traffic when possible, note that other cars will try to change lanes too. The car should avoid hitting other cars at all cost as well as driving inside of the marked road lanes at all times, unless going from one lane to another. The car should be able to make one complete loop around the 6946m highway. Since the car is trying to go 50 MPH, it should take a little over 5 minutes to complete 1 loop. Also the car should not experience total acceleration over 10 m/s^2 and jerk that is greater than 10 m/s^3.
@@ -19,13 +16,36 @@ The highway's waypoints loop around so the frenet s value, distance along the ro
 3. Compile: `cmake .. && make`
 4. Run it: `./path_planning`.
 
-Here is the data provided from the Simulator to the C++ Program
-
 ### Compilation
 
 ![Compiled](images/make.png)
 
 The code compiles without errors without any changes to CMakeLists.txt
+
+## Valid Trajectories
+### The car is able to drive at least 4.32 miles without incident.
+
+![Driving](images/driving.png)
+
+### The car drives according to the speed limit.
+
+The car drives under the posted speed limit.
+
+### Max Acceleration and Jerk are not Exceeded.
+
+The max acceleration and jerk are under control.
+
+### Car does not have collisions.
+
+There are no collisions after 4.32 miles. 
+
+### The car stays in its lane, except for the time between changing lanes.
+
+The car never leaves its lane except to change lanes in a quick and smooth motion.
+
+### The car is able to change lanes
+
+The car changes lanes when there is a slower vehicle in front of it detected and there are no cars to its sides.
 
 ## Dependencies
 
